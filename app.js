@@ -16,7 +16,7 @@ var app = express();
 var uristring =
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
-  'mongodb://localhost/todoApp';
+  'mongodb://todo-app-dbuser:todoapp@ds011432.mlab.com:11432/heroku_b1s4pcsr';
 
 console.log(uristring);
 
