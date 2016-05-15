@@ -6,7 +6,7 @@
     <script>
       function update(id) {
         var xhr = new XMLHttpRequest();
-        xhr.open('PUT', "http://localhost:3000/api/todos/" + id, true);
+        xhr.open('PUT', "/api/todos/" + id, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({completed : document.getElementById(id).checked, updated_at: Date.now()}));
       }
