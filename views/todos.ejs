@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script>
+      function update(id) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('PUT', "http://localhost:3000/api/todos/" + id, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({completed : document.getElementById(id).checked, updated_at: Date.now()}));
+      }
+    </script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <ul>
+      <% todos.forEach(function(todo) { %>
+        <li><input id="<%= todo.id %>" type="checkbox" <% if(todo.completed) { %> checked <% } %> onclick="update('<%= todo.id %>')"/><%= todo.name %> - <%= todo.note %></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
