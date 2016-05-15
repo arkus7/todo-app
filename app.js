@@ -13,7 +13,12 @@ var todos = require('./routes/todos');
 var app = express();
 
 // mongo database
-mongoose.connect('mongodb://localhost/todoApp', function(err) {
+var uristring =
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/todoApp';
+
+mongoose.connect(uristring, function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
