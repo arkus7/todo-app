@@ -18,12 +18,14 @@ var uristring =
   process.env.MONGOHQ_URL ||
   'mongodb://localhost/todoApp';
 
+console.log(uristring);
+
 mongoose.connect(uristring, function(err) {
-    if(err) {
-        console.log('connection error', err);
-    } else {
-        console.log('connection successful');
-    }
+  if(err) {
+      console.log('connection error', err);
+  } else {
+      console.log('connection successful');
+  }
 });
 
 // view engine setup
