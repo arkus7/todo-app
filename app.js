@@ -14,7 +14,7 @@ var app = express();
 
 // mongo database
 var uristring =
-  process.env.MONGOLAB_URI ||
+  process.env.MONGODB_URI ||
   process.env.MONGOHQ_URL ||
   'mongodb://todo-app-dbuser:todoapp@ds011432.mlab.com:11432/heroku_b1s4pcsr';
 
